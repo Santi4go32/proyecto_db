@@ -2,9 +2,9 @@ head
   meta(charset='utf-8')
   title Title2
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
-
+  link(rel='stylesheet', href='Escritorio/proyecto_db/backend_express/views/style.css')
   body
-    p test
+    p REGISTER
     .modal-dialog
         .modal-content
           // Modal Header
@@ -13,17 +13,33 @@ head
               span(aria-hidden="true") ×
               span.sr-only Close
             h4#myModalLabel.modal-title
-              | Crear usuario
+              | CREA TU USUARIO
           // Modal Body
           .modal-body
             form(role='form' method='POST' action='http://localhost:3000/usuario')
-              div.form-group
+              .form-group
+                label(for='type') Type:
+                div.checkbox
+                input(type='checkbox' name='agreement' checked=false)
+                | Trabajador
+                div.checkbox
+                input(type='checkbox' name='agreement' checked=false)
+                | Cliente
+              .form-group
                 label(for='nombre_usuario') Name:
-                input#name.form-control(type='email', placeholder='usuario@gmail.com' name='nombre_usuario')
-              div.form-group
+                input#nombre_usuario.form-control(type='text', placeholder='juan' name='nombre_usuario')
+              
+              .form-group
+                label(for='email') Email:
+                input#email.form-control(type='email', placeholder='usuario@gmail.com' name='email')
+              
+              .form-group
                 label(for='password') Password:
-                input#email.form-control(type='text', placeholder='xxxx' name='password')
+                input#password.form-control(type='password', placeholder='xxxxx' name='password')
+                
               button.btn.btn-primary(type="submit", name="asdf") Create
+              button.btn.btn-default(type="button", data-dismiss="modal")
+               | Close
           // Modal Footer
           .modal-footer
-            h4 footer
+            h4 LOGIN
